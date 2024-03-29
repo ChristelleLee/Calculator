@@ -2,38 +2,42 @@
     <head>
         <title>HTML Calculator</title>
         <link rel="stylesheet" type="text/css" href="CSS for calculator.css" >
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Calculator.js"></script>
+
+
     <head>
     <body>
         <div class="text">
-            <p class="output">0</p>
+            <p id="output">0</p>
         </div>
         <div>
-            <input type="button" value="AC" class="answer"></input>
+            <input type="button" value="AC" class="answer" onclick="clear()"></input>
         </div>
         <div> 
-            <input type="button" value="7" class="number"></input>
-            <input type="button" value="8" class="number"></input>
-            <input type="button" value="9" class="number"></input>
-            <input type="button" value="÷" class="symbol"></input>
+            <input type="button" value="7" class="number" onclick="clickBtn(7)"></input>
+            <input type="button" value="8" class="number" onclick="clickBtn(8)"></input>
+            <input type="button" value="9" class="number" onclick="clickBtn(9)"></input>
+            <input type="button" value="÷" class="symbol" onclick="clickOP('÷')"></input>
         </div>
         <div>
-            <input type="button" value="4" class="number"></input>
-            <input type="button" value="5" class="number"></input>
-            <input type="button" value="6" class="number"></input>
-            <input type="button" value="x" class="symbol"></input>
+            <input type="button" value="4" class="number" onclick="clickBtn(4)"></input>
+            <input type="button" value="5" class="number" onclick="clickBtn(5)"></input>
+            <input type="button" value="6" class="number" onclick="clickBtn(6)"></input>
+            <input type="button" value="x" class="symbol" onclick="clickOP('×')"></input>
         </div>
         <div>
-            <input type="button" value="1" class="number"></input>
-            <input type="button" value="2" class="number"></input>
-            <input type="button" value="3" class="number"></input>
-            <input type="button" value="-" class="symbol"></input>
+            <input type="button" value="1" class="number" onclick="clickBtn(1)"></input>
+            <input type="button" value="2" class="number" onclick="clickBtn(2)"></input>
+            <input type="button" value="3" class="number" onclick="clickBtn(3)"></input>
+            <input type="button" value="-" class="symbol" onclick="clickOP('-')"></input>
         </div>
         <div>
-            <input type="button" value="0" class="number"></input>
-            <input type="button" value="." class="number"></input>
-            <input type="button" value="=" class="symbol"></input>
-            <input type="button" value="+" class="symbol"></input>
+            <input type="button" value="0" class="number" onclick="clickBtn(0)"></input>
+            <input type="button" value="." class="number" onclick="clickBtn('.')"></input>
+            <input type="button" value="=" class="symbol" onclick="calc()"></input>
+            <input type="button" value="+" class="symbol" onclick="clickOP('+')"></input>
         </div>
     </body>
 </html>
