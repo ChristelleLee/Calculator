@@ -1,14 +1,45 @@
-var num = [0];
+var display = "";
+var cal = "";
+var result = "";
+var DP = "0"
 
-function sum(num1){
-    var input = [];
-    var answer = 0;
-    return answer = num + input;
+function clickBtn(num){
+    display += num;
+    cal += num;
+    $("#output").html(display);
 }
 
-function sum(a, b){
-
-    return a + b;
+function clickOP(OP) {
+    display += OP;
+    $("#output").html(display);
+    if (OP === "+"){
+        cal += " + ";
+    } else if(OP === "-"){
+        cal += " - ";
+    } else if(OP === "×"){
+        cal += " * ";
+    } else if(OP === "÷"){
+        cal += " / ";
+    }
 }
 
-console.log(sum(1,1));
+function calc() {
+    result = eval(cal);
+    display = result;
+    $("#output").html(result)
+}
+
+function clear(){
+    console.log("Clearing calculator...");
+    
+    // Reset variables
+    cal = "";
+    result = '0';
+    display = result;
+
+    // Update display
+    console.log("Display after clearing:", display);
+    $("#output").html(display);
+}
+
+clear();
