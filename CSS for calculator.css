@@ -56,3 +56,11 @@ input.symbol:active {
 input.answer:active {
     background-color: #FF7F50;
 }
+
+.text p {
+    width: 220px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 3px auto;
+}
