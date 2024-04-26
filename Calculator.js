@@ -6,26 +6,27 @@ var isEqualPressed = false;
 
 function clickBtn(num){
     var display = $("#output").html();
-    if (isEqualPressed = true){
+    if(isEqualPressed = false){
         if(display == "0"){
             display = num;
+            cal += num;
         }
         else{
-            display += num;
+           display += num;
+           cal += num;
+
         }
-    } else {
-        
     }
-    cal += num;
     $("#output").html(display);
     isOperatorPressed = false;
+    isDotPressed = false;
 }
 
 function clickOP(OP) {
     var display = $("#output").html();
     if(isOperatorPressed == false){
         display += OP;
-        operatorReplacer(OP)
+        operatorReplacer(OP);
     } 
     else {
         display = display.substring(0, display.length-1);
@@ -41,13 +42,13 @@ function operatorReplacer(OP){
         cal = cal.substring(0, cal.length-1);
     }
     if (OP === "+"){
-        cal += "+";
+        cal += " + ";
     } else if(OP === "-"){
-        cal += "-";
+        cal += " - ";
     } else if(OP === "×"){
-        cal += "*";
+        cal += " * ";
     } else if(OP === "÷"){
-        cal += "/";
+        cal += " / ";
     }
 }
 
@@ -59,18 +60,24 @@ function clickDot(dot){
         display = display.substring(0, display.length-1);
         display += dot;
     }
+    $("#output").html(display);
     isDotPressed = true;
+    isOperatorPressed = true;
 }
 
 function calc() {
+    if (isEqualPressed = false){
         result = eval(cal);
         cal = result;
         $("#output").html(result);
-        isEqualPressed = true;
+    }
 }
 
 function cleanDisplay(){
     cal = "";
     display = "0";
     $("#output").html(display);
+    isOperatorPressed = false;
+    isDotPressed = false;
+    isEqualPressed = false;
 }
