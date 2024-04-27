@@ -28,7 +28,7 @@ function clickBtn(num){
 function clickOP(OP) {
     var display = $("#output").html();
     if(isEqualPressed == false){    
-        if(isOperatorPressed == false || isDotPressed == false){
+        if(isOperatorPressed == false && isDotPressed == false){
             display += OP;
             operatorReplacer(OP);
         } 
@@ -47,7 +47,7 @@ function clickOP(OP) {
 }
 
 function operatorReplacer(OP){
-    if(isOperatorPressed){
+    if(isOperatorPressed == true || isDotPressed == true){
         cal = cal.substring(0, cal.length-1);
     }
     if (OP === "+"){
@@ -64,12 +64,13 @@ function operatorReplacer(OP){
 function clickDot(dot){
     var display = $("#output").html();
     if (isEqualPressed == false) {
-        if (isDotPressed == false || isOperatorPressed == false){
+        if (isDotPressed == false && isOperatorPressed == false){
             display += dot;
             cal += dot;
         } else {
             display = display.substring(0, display.length-1);
             display += dot;
+            cal = cal.substring(0, cal.length-1);
             cal += dot;
             
         }      
