@@ -12,10 +12,10 @@ function clickBtn(num){
     } else {
         if(isEqualPressed == false){
             display += num;
-            cal += num;
+            cal += String(num);
         }else{
-            display = num;
-            cal = num; 
+            display =  num;
+            cal =  num; 
             isEqualPressed = false;
         }
 
@@ -23,6 +23,7 @@ function clickBtn(num){
     $("#output").html(display);
     isOperatorPressed = false;
     isDotPressed = false;
+
 }
 
 function clickOP(OP) {
