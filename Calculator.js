@@ -1,8 +1,10 @@
 var cal = "";
-var result = "";
 var isOperatorPressed = true;
 var isDotPressed = true;
 var isEqualPressed = false;
+var history = "";
+var formula = "";
+var result = "";
 
 function clickBtn(num){
     var display = $("#output").html();
@@ -85,15 +87,18 @@ function clickDot(dot){
 }
 
 function calc() {
+    var display = $("#output").html();
     result = eval(cal);
+    formula = display;
     cal = result;
+    history += formula + "=" + cal + "<br>";
     $("#output").html(result);
+    $("#history").html(history);
     isEqualPressed = true;
-
+    console.log(history);
 }
 
 function cleanDisplay(){
-
     cal = "";
     display = "0";
     $("#output").html(display);
