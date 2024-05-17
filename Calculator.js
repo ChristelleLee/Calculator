@@ -2,7 +2,7 @@ var cal = "";
 var isOperatorPressed = true;
 var isDotPressed = true;
 var isEqualPressed = false;
-var history = "";
+var historyFormula = "";
 var formula = "";
 var result = "";
 
@@ -89,13 +89,11 @@ function clickDot(dot){
 function calc() {
     var display = $("#output").html();
     result = eval(cal);
-    formula = display;
     cal = result;
-    history += formula + "=" + cal + "<br>";
+    historyFormula += display + "=" + result + "<br>";
     $("#output").html(result);
-    $("#history").html(history);
+    $("#history").html(historyFormula);
     isEqualPressed = true;
-    console.log(history);
 }
 
 function cleanDisplay(){
